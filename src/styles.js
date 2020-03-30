@@ -37,7 +37,7 @@ h1 {
         font-family: 'Liu Jian Mao Cao', cursive;
     }
 
-    button {
+    .get-started {
         background-color: aliceblue;
         color: black;
         height: 10%;
@@ -46,6 +46,7 @@ h1 {
         margin-left: 40%;
         border: none;
         font-size: 1.2em;
+        text-decoration: none;
     }
 }
 `;
