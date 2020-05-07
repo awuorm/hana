@@ -34,7 +34,7 @@ h1 {
     p {
         font-size: 2em;
         padding:1em;
-        font-family: 'Liu Jian Mao Cao', cursive;
+        font-family: 'Nanum Pen Script', cursive;
     }
 
     .get-started {
