@@ -8,7 +8,7 @@ width:100vw;
 overflow-y:auto;
 background-color: black;
 color: aliceblue;
-font-family: 'Roboto Slab', serif;
+font-family: 'Nanum Myeongjo', serif;
 
 `;
 
@@ -18,7 +18,7 @@ width:100%;
 overflow-y:auto;
 background-color: black;
 color: aliceblue;
-font-family: 'Roboto Slab', serif;
+font-family: 'Nanum Myeongjo', serif;
 h1 {
     s {
         padding: 1.5em;    
@@ -47,6 +47,7 @@ h1 {
         border: none;
         font-size: 1.2em;
         text-decoration: none;
+        
     }
 }
 `;
