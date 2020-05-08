@@ -13,7 +13,7 @@ const LandingPage = () => {
 The word hana means happiness in Arabic, the number
 one in Korean, work in Hawaiian, flower in Japanese, 
 moon  in Albanian and to lack in Kiswahili.hana is a place where your words can live without you.</p>
- <NavLink className="get-started" to="/home">Get started</NavLink>
+ <NavLink className="get-started" to="/register">Get started</NavLink>
       </div>
     </StyledLandingPage>
   );
