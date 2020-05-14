@@ -1,15 +1,24 @@
 import React from "react";
-import { StyledAuth } from "../styles";
-import {Formik} from "formik";
+import { connect } from "react-redux";
+import * as actionCreators from "../state/actionCreators";
+import { Formik } from "formik";
+import { store } from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+import "animate.css";
+import { StyledRegister } from "../styles";
+// import logo from "../../imgs/logo.png";
+import { NavLink } from "react-router-dom";
 
-const Login = (props) => {
-  let userDetails = { username: "", password: "" };
+export const Login = (props) => {
+  console.log("props from Login", props);
+  const { userDetails } = props;
+
   return (
-    <StyledAuth>
+    <StyledRegister>
       <h1>
         <s>hana</s>
       </h1>
-      <div className="auth-forms">
+      <div>
         <Formik
           initialValues={userDetails}
           validate={(userDetails) => {
@@ -79,15 +88,37 @@ const Login = (props) => {
                 {" "}
                 {errors.password && touched.password && errors.password}
               </span>
-              <button type="submit" disabled={isSubmitting}>
+              <button
+                type="submit"
+                onClick={() => {
+                  store.addNotification({
+                    title: "Trying to login?",
+                    message: "A moment while we check your details",
+                    type: "info", // 'default', 'success', 'info', 'warning'
+                    container: "top-right", // where to position the notifications
+                    animationIn: ["animated", "fadeIn"], // animate.css classes that's applied
+                    animationOut: ["animated", "fadeOut"], // animate.css classes that's applied
+                    dismiss: {
+                      duration: 3000,
+                    },
+                  });
+                }}
+                disabled={isSubmitting}
+              >
                 Submit
               </button>
             </form>
           )}
         </Formik>
       </div>
-    </StyledAuth>
+      <p>
+        <span>
+          or <br />
+        </span>
+        <NavLink to="/register">Register</NavLink>
+      </p>
+    </StyledRegister>
   );
 };
 
-export default Login;
+export default connect((state) => state, actionCreators)(Login);

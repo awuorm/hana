@@ -50,7 +50,7 @@ export const StyledLandingPage = styled.div`
   }
 `;
 
-export const StyledAuth = styled.div`
+export const StyledRegister = styled.div`
   height: 100%;
   width: 100%;
   overflow-y: auto;

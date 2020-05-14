@@ -1,18 +1,27 @@
 import React from "react";
-import { StyledAuth } from "../styles";
-import {Formik} from "formik";
+import { connect } from "react-redux";
+import * as actionCreators from "../state/actionCreators";
+import { Formik } from "formik";
+import { store } from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+import "animate.css";
+import { StyledRegister } from "../styles";
+// import logo from "../../imgs/logo.png";
+import { NavLink } from "react-router-dom";
 
-const Register = (props) => {
-  let userDetails = { username: "", password: "" };
+export const Register = props => {
+  console.log("props from Login", props);
+  const { userDetails } = props;
+
   return (
-    <StyledAuth>
-      <h1>
+    <StyledRegister>
+       <h1>
         <s>hana</s>
       </h1>
-      <div className="auth-forms">
+      <div>
         <Formik
           initialValues={userDetails}
-          validate={(userDetails) => {
+          validate={userDetails => {
             let errors = {};
             if (!userDetails.username) {
               errors.username = "Please provide a username!";
@@ -39,10 +48,10 @@ const Register = (props) => {
             touched,
             handleChange,
             handleSubmit,
-            isSubmitting,
+            isSubmitting
           }) => (
             <form onSubmit={handleSubmit}>
-              <h4>Register to continue</h4>
+              <h4>Register details to continue</h4>
               <label>Username</label>
               <input
                 value={values.username}
@@ -55,7 +64,7 @@ const Register = (props) => {
                   color: "red",
                   background: "rgba(255, 255, 255, 0.0)",
                   padding: "0.5em",
-                  margin: "0.5em",
+                  margin: "0.5em"
                 }}
               >
                 {" "}
@@ -73,21 +82,41 @@ const Register = (props) => {
                   color: "red",
                   background: "rgba(255, 255, 255, 0.0)",
                   padding: "0.5em",
-                  margin: "0.5em",
+                  margin: "0.5em"
                 }}
               >
                 {" "}
                 {errors.password && touched.password && errors.password}
               </span>
-              <button type="submit" disabled={isSubmitting}>
+              <button
+                type="submit"
+                onClick={() => {
+                  store.addNotification({
+                    title: "Registering?",
+                    message: "A moment while we record your details",
+                    type: "info", // 'default', 'success', 'info', 'warning'
+                    container: "top-right", // where to position the notifications
+                    animationIn: ["animated", "fadeIn"], // animate.css classes that's applied
+                    animationOut: ["animated", "fadeOut"], // animate.css classes that's applied
+                    dismiss: {
+                      duration: 3000
+                    }
+                  });
+                }}
+                disabled={isSubmitting}
+              >
                 Submit
               </button>
             </form>
           )}
         </Formik>
       </div>
-    </StyledAuth>
+      <p>
+        <span>or <br/></span>
+        <NavLink to="/login">Sign in</NavLink>
+      </p>
+    </StyledRegister>
   );
 };
 
-export default Register;
+export default connect(state => state, actionCreators)(Register);

@@ -67,7 +67,7 @@ export const postLogin = (userDetails, props) => dispatch => {
         }
       });
       dispatch({ type: types.POST_LOGIN, payload: res.data });
-      props.history.push("/dash/questions");
+      props.history.push("/home");
       window.localStorage.setItem("token", res.data.token);
     })
     .catch(error => {
