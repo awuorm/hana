@@ -23,8 +23,8 @@ export const Login = (props) => {
           initialValues={userDetails}
           validate={(userDetails) => {
             let errors = {};
-            if (!userDetails.username) {
-              errors.username = "Please provide a username!";
+            if (!userDetails.email) {
+              errors.email = "Please provide an email!";
             }
             if (!userDetails.password) {
               errors.password = "Please provide a password!";
@@ -52,11 +52,11 @@ export const Login = (props) => {
           }) => (
             <form onSubmit={handleSubmit}>
               <h4>Login to continue</h4>
-              <label>Username</label>
+              <label>email</label>
               <input
-                value={values.username}
+                value={values.email}
                 type="text"
-                name="username"
+                name="email"
                 onChange={handleChange}
               />
               <span
@@ -68,7 +68,7 @@ export const Login = (props) => {
                 }}
               >
                 {" "}
-                {errors.username && touched.username && errors.username}
+                {errors.email && touched.email && errors.email}
               </span>
               <label>Password</label>
               <input

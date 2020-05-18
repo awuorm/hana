@@ -14,7 +14,7 @@ import * as actionCreators from "./state/actionCreators";
 function App(props) {
   console.log(props);
   const [userDetails, setUserDetails] = useState({
-    username: "",
+    email: "",
     password: ""
   });
   return (

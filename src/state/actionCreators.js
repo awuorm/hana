@@ -11,7 +11,7 @@ export const registrationError = error => {
 export const postRegister = (userDetails, props) => dispatch => {
   console.log("props from register", userDetails, props);
   axios
-    .post("https://friend-finder-backend.herokuapp.com/api/auth/register", userDetails)
+    .post("https://hana-backend.herokuapp.com/api/auth/register", userDetails)
     .then(res => {
       store.addNotification({
         title: "Registration successful!",
@@ -52,7 +52,7 @@ export const loginError = error => {
 export const postLogin = (userDetails, props) => dispatch => {
   console.log("props from register", userDetails, props);
   axios
-    .post("https://friend-finder-backend.herokuapp.com/api/auth/login", userDetails)
+    .post("https://hana-backend.herokuapp.com/api/auth/login", userDetails)
     .then(res => {
       console.log(res);
       store.addNotification({
