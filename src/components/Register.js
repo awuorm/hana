@@ -51,12 +51,12 @@ export const Register = props => {
             isSubmitting
           }) => (
             <form onSubmit={handleSubmit}>
-              <h4>Register details to continue</h4>
-              <label>email</label>
+              {/* <h4>Register details to continue</h4> */}
               <input
                 value={values.email}
                 type="text"
                 name="email"
+                placeholder="email"
                 onChange={handleChange}
               />
               <span
@@ -70,11 +70,11 @@ export const Register = props => {
                 {" "}
                 {errors.email && touched.email && errors.email}
               </span>
-              <label>Password</label>
               <input
                 value={values.password}
                 type="password"
                 name="password"
+                placeholder="password"
                 onChange={handleChange}
               />
               <span
@@ -105,16 +105,20 @@ export const Register = props => {
                 }}
                 disabled={isSubmitting}
               >
-                Submit
+                LOGIN
               </button>
+              <p>Forgot your password?</p>
+              <h4>WELCOME</h4>
+              <h5>Don't you have an account?</h5>
+              <NavLink to="/login">Sign in</NavLink>
             </form>
           )}
         </Formik>
       </div>
-      <p>
+      {/* <p>
         <span>or <br/></span>
-        <NavLink to="/login">Sign in</NavLink>
-      </p>
+        
+      </p> */}
     </StyledRegister>
   );
 };

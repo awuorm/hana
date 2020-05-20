@@ -51,12 +51,11 @@ export const Login = (props) => {
             isSubmitting,
           }) => (
             <form onSubmit={handleSubmit}>
-              <h4>Login to continue</h4>
-              <label>email</label>
               <input
                 value={values.email}
                 type="text"
                 name="email"
+                placeholder="email"
                 onChange={handleChange}
               />
               <span
@@ -70,11 +69,11 @@ export const Login = (props) => {
                 {" "}
                 {errors.email && touched.email && errors.email}
               </span>
-              <label>Password</label>
               <input
                 value={values.password}
                 type="password"
                 name="password"
+                placeholder="password"
                 onChange={handleChange}
               />
               <span
@@ -105,18 +104,17 @@ export const Login = (props) => {
                 }}
                 disabled={isSubmitting}
               >
-                Submit
+                LOGIN
               </button>
+              <p>Forgot your password?</p>
+              <span>
+                or <br />
+              </span>
+              <NavLink to="/register">Register</NavLink>
             </form>
           )}
         </Formik>
       </div>
-      <p>
-        <span>
-          or <br />
-        </span>
-        <NavLink to="/register">Register</NavLink>
-      </p>
     </StyledRegister>
   );
 };
