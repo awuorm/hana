@@ -133,3 +133,17 @@ export const StyledRegister = styled.div`
     }
   }
 `;
+
+export const StyledHome = styled.div`
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background-color: black;
+  color: aliceblue;
+  font-family: "Nanum Myeongjo", serif;
+  h1 {
+    s {
+      padding: 1.5em;
+    }
+  }
+  `;
