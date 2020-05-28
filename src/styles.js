@@ -1,6 +1,7 @@
 import styled from "styled-components";
 // import leaves from "./imgs/leaves.png";
 import login_img from "./img/login_img.jpg";
+import smoke_img from "./img/smoke_img.jpg";
 
 export const StyledApp = styled.div`
   height: 100vh;
@@ -117,7 +118,7 @@ export const StyledRegister = styled.div`
         margin-top: 15px;
         /* margin-bottom: 0; */
       }
-       a {
+      a {
         font-size: 1em;
         font-weight: normal;
         margin-top: 15px;
@@ -129,7 +130,7 @@ export const StyledRegister = styled.div`
         border: none;
         border-radius: 1.5em;
         font-weight: bold;
-       }
+      }
     }
   }
 `;
@@ -141,9 +142,64 @@ export const StyledHome = styled.div`
   background-color: black;
   color: aliceblue;
   font-family: "Nanum Myeongjo", serif;
-  h1 {
-    s {
-      padding: 1.5em;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      s {
+        /* padding-top: 1.5em; */
+        padding-left: 1.5em;
+      }
+    }
+    input {
+      /* margin-left: 70%;  */
+      padding: 0.7em;
+      margin-right: 5%;
+      margin-top: 1.5em;
+      text-align: center;
     }
   }
-  `;
+  .create-button {
+    margin-top: 8vh;
+    border: 1px solid lightblue;
+    margin-left: 4vw;
+    width: 6vw;
+    height: 12vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      text-decoration: none;
+      color: lightblue;
+      font-size: 3em;
+    }
+  }
+`;
+export const StyledCreatePost = styled.div`
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background-color: black;
+  color: aliceblue;
+  font-family: "Nanum Myeongjo", serif;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(${smoke_img});
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20vh;
+    image-rendering: smooth;
+    box-shadow: 0 8px 6px -6px lightgray;
+    h1 {
+      s {
+        /* padding-top: 1.5em; */
+        padding-left: 1.5em;
+      }
+    }
+  }
+`;

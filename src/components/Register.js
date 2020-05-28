@@ -105,12 +105,12 @@ export const Register = props => {
                 }}
                 disabled={isSubmitting}
               >
-                LOGIN
+                REGISTER
               </button>
               <p>Forgot your password?</p>
               <h4>WELCOME</h4>
               <h5>Don't you have an account?</h5>
-              <NavLink to="/login">Sign in</NavLink>
+              <NavLink to="/login">Login</NavLink>
             </form>
           )}
         </Formik>
